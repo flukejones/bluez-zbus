@@ -9,13 +9,15 @@ keywords = ["bluez", "zbus"]
 categories = ["os::unix-apis"]
 
 [features]
-default = ["experimental"]
+default = ["async-io", "blocking-api", "experimental"]
+async-io = ["zbus/async-io"]
+blocking-api = ["zbus/blocking-api"]
 # Enable the bluez experimental API
 experimental = []
 
 [dependencies]
 serde = "1.0"
-zbus = "5.7.0"
+zbus = { version = "5.7.0", default-features = false }
 log = "^0.4"
 uuid = { version = "*", features = ["v4"] }
 

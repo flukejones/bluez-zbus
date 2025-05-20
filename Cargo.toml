@@ -1,0 +1,23 @@
+[package]
+name = "bluez-zbus"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+authors = ["Luke D Jones <luke@ljones.dev>"]
+description = "A dbus client (using zbus) for bluez"
+keywords = ["bluez", "zbus"]
+categories = ["os::unix-apis"]
+
+[features]
+default = ["experimental"]
+# Enable the bluez experimental API
+experimental = []
+
+[dependencies]
+serde = "1.0"
+zbus = "5.7.0"
+log = "^0.4"
+uuid = { version = "*", features = ["v4"] }
+
+[dev-dependencies]
+env_logger = "^0.10.0"
